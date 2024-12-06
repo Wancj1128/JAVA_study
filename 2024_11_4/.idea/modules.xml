@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/2024_11_4.iml" filepath="$PROJECT_DIR$/2024_11_4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/char_treanslate/char_treanslate.iml" filepath="$PROJECT_DIR$/char_treanslate/char_treanslate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/unit4_class2/unit4_class2.iml" filepath="$PROJECT_DIR$/unit4_class2/unit4_class2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/unit_4_class/unit_4_class1.iml" filepath="$PROJECT_DIR$/unit_4_class/unit_4_class1.iml" />
+    </modules>
+  </component>
+</project>
