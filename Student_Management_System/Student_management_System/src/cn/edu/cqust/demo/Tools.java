@@ -1,6 +1,7 @@
 package cn.edu.cqust.demo;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Tools {
@@ -86,6 +87,124 @@ public class Tools {
             }
         return user;
     }
+
+    public static boolean log_in(ArrayList<User> users){
+        for (int i = 0; i < 3; i++) {
+
+            if (users.isEmpty()) {
+                System.out.println("用户还未创建，请先创建用户");
+                break;
+            } else {
+                Scanner sc = new Scanner(System.in);
+                System.out.print("请输入用户账号：");
+                String username = sc.next();
+                boolean flag = false;
+                String password = "";
+                for (int x = 0; x < users.size(); x++) {
+                    String old_name = users.get(x).getUsername();
+                    if (username.equals(old_name)) {
+                        flag = true;
+                        password = users.get(x).getPassword();
+                        break;
+                    }
+                }
+                if (!flag) {
+                    System.out.println("用户名不存在");
+                    break;
+                } else {
+                    while (true){
+                        String verify_code = Verification_Code();
+                        System.out.println(verify_code);
+                        System.out.println("请输入上方的验证码:");
+                        String result = sc.next();
+                        if (result.equals(verify_code)) {
+                            System.out.println("验证通过 :)");
+                            break;
+                        }
+                        System.out.println("验证码输入错误，请重新输入 :(");
+
+                    }
+                    System.out.print("请输入密码：");
+                    String new_password = sc.next();
+                    if (password.equals(new_password)) {
+                        System.out.println("登录成功！");
+                        return true;
+                    }
+                    else if ((2-i) != 0) {
+                        System.out.println("登录失败，请重新输入账号密码，您还有" + (2 - i) + "次机会");
+                    }
+                    else{
+                        System.out.println("登录失败");
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public static String Verification_Code(){
+        String code = "";
+        Random random = new Random();
+        int choose = random.nextInt(5);
+        for (int i = 0; i < 5; i++) {
+
+            if (i == choose) {
+                int number =  random.nextInt(9);
+                String num = String.valueOf(number);
+                code += number;
+            }
+            else if (random.nextBoolean()) {
+                char letter = (char) ('A' + random.nextInt(26));
+                code += letter;
+            }
+            else {
+                char letter = (char) ('a' + random.nextInt(26));
+                code += letter;
+            }
+        }
+        return code;
+    }
+
+    public static void forget_password(ArrayList<User> users){
+        String id = "";
+        String phone_number = "";
+        int index = 0;
+        if (users.isEmpty()) {
+            System.out.println("请先注册用户");
+        }
+        else {
+            System.out.println("忘记密码");
+            System.out.print("请输入用户名：");
+            Scanner sc = new Scanner(System.in);
+            String user_name = sc.next();
+            boolean flag = false;
+            for (int i = 0; i < users.size(); i++) {
+                String old_name = users.get(i).getUsername();
+                if (old_name.equals(user_name)) {
+                    flag = true;
+                    id = users.get(i).getIDcard();
+                    phone_number = users.get(i).getPhone_number();
+                    index = i;
+                    break;
+                }
+            }
+            if (flag) {
+                System.out.print("请输入用户的身份证号：");
+                String re_id = sc.next();
+                System.out.print("请输入用户的手机号：");
+                String re_phone = sc.next();
+                if (id.equals(re_id) && phone_number.equals(re_phone)) {
+                    System.out.print("请重新设置用户密码：");
+                    String new_password = sc.next();
+                    users.get(index).setPassword(new_password);
+                }
+                else {
+                    System.out.println("信息不匹配，修改失败");
+                }
+            } else System.out.println("此用户还未注册");
+        }
+    }
+
     public static Student Add(ArrayList<Student> students) {
         System.out.println("添加学生");
         Student student = new Student();
