@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="267.0" prefWidth="505.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.edu.cqust.classdesign.control.ProductControl">
+   <children>
+      <Label layoutX="159.0" layoutY="39.0" text="耗材资料删除">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="61.0" layoutY="135.0" text="要删除的耗材型号">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="delete_model" layoutX="223.0" layoutY="135.0" />
+      <Button layoutX="184.0" layoutY="212.0" mnemonicParsing="false" onAction="#do_delete_produte" prefHeight="32.0" prefWidth="79.0" style="-fx-background-color: #58719A;" text="确定" textFill="WHITE" />
+      <Label fx:id="delete_errorinfo" layoutX="224.0" layoutY="158.0" prefHeight="15.0" prefWidth="161.0" text="Label" textFill="RED" visible="false" />
+   </children>
+</AnchorPane>

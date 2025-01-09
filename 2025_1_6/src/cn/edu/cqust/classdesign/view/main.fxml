@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="501.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.edu.cqust.classdesign.control.MainControl">
+   <children>
+      <TableView fx:id="product_view" layoutX="29.0" layoutY="42.0" prefHeight="388.0" prefWidth="741.0">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="61.0" text="名称" />
+            <TableColumn fx:id="brand" prefWidth="71.0" text="品牌" />
+            <TableColumn fx:id="model" prefWidth="79.0" text="型号" />
+          <TableColumn fx:id="number" prefWidth="62.0" text="数量" />
+            <TableColumn fx:id="price" prefWidth="58.0" text="价格" />
+            <TableColumn fx:id="company_name" prefWidth="86.5" text="供应商公司名" />
+            <TableColumn fx:id="home_loca" prefWidth="116.0" text="地址" />
+            <TableColumn fx:id="tel_number" prefWidth="117.0" text="联系电话" />
+            <TableColumn fx:id="Contact_people" minWidth="0.0" prefWidth="89.5" text="联系人" />
+        </columns>
+      </TableView>
+      <Text layoutX="334.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="耗材管理系统">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="add" layoutX="149.0" layoutY="447.0" mnemonicParsing="false" onAction="#DoAddProduct" prefHeight="39.0" prefWidth="125.0" text="耗材资料增加" />
+      <Button fx:id="delet" layoutX="343.0" layoutY="447.0" mnemonicParsing="false" onAction="#DoDeletProduct" prefHeight="39.0" prefWidth="125.0" text="耗材资料删除" />
+      <Button fx:id="update" layoutX="538.0" layoutY="447.0" mnemonicParsing="false" onAction="#DoUpdateProduct" prefHeight="39.0" prefWidth="125.0" text="耗材资料修改" />
+   </children>
+</AnchorPane>

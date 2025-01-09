@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.edu.cqust.classdesign.control.usercontrol">
+   <children>
+      <TableView fx:id="userview" layoutX="84.0" layoutY="88.0" prefHeight="224.0" prefWidth="433.0">
+        <columns>
+          <TableColumn fx:id="username" prefWidth="129.0" text="用户账号名" />
+            <TableColumn fx:id="user_password" prefWidth="147.0" text="密码" />
+            <TableColumn fx:id="user_tel_number" prefWidth="156.0" text="用户手机号" />
+        </columns>
+      </TableView>
+      <Label layoutX="228.0" layoutY="27.0" text="用户管理界面">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="84.0" layoutY="344.0" mnemonicParsing="false" onAction="#adduser" prefHeight="32.0" prefWidth="79.0" text="增加用户" />
+      <Button layoutX="261.0" layoutY="344.0" mnemonicParsing="false" onAction="#deletuser" prefHeight="32.0" prefWidth="79.0" text="删除用户" />
+      <Button layoutX="429.0" layoutY="344.0" mnemonicParsing="false" onAction="#updateuser" prefHeight="32.0" prefWidth="91.0" text="更改用户信息" />
+      <Button layoutX="531.0" layoutY="16.0" mnemonicParsing="false" onAction="#exit" prefHeight="23.0" prefWidth="55.0" text="退出" />
+   </children>
+</AnchorPane>
